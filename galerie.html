@@ -7,56 +7,63 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-[#1a1a1a]">
-    
-    <nav class="p-6 flex justify-between items-center border-b border-[#c5a059]/20">
+
+    <nav class="fixed w-full z-[100] bg-[#1a1a1a]/95 backdrop-blur-md border-b border-[#c5a059]/20 px-6 py-4 flex justify-between items-center">
         <a href="index.html" class="text-[#c5a059] font-['Cormorant_Garamond'] text-xl italic nav-link">L'Éveil des Sens</a>
-        <a href="index.html" class="nav-link uppercase text-[10px] tracking-widest text-white">Retour à l'accueil</a>
+        
+        <button id="burger-btn" class="md:hidden text-[#c5a059] p-2">
+            <i data-lucide="menu"></i>
+        </button>
+
+        <div id="mobile-menu" class="fixed inset-0 bg-[#1a1a1a] z-[105] flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none translate-x-full transition-all duration-500">
+            <a href="index.html" class="text-3xl font-['Cormorant_Garamond'] text-[#c5a059]">Accueil</a>
+            <a href="menu.html" class="text-3xl font-['Cormorant_Garamond'] text-[#c5a059]">La Carte</a>
+            <a href="galerie.html" class="text-3xl font-['Cormorant_Garamond'] text-[#c5a059]">Galerie</a>
+            <a href="commande.html" class="btn-premium">Commander</a>
+        </div>
     </nav>
 
-    <div class="py-20 text-center">
+    <div class="py-32 text-center">
         <h1 class="font-['Cormorant_Garamond'] text-5xl italic text-[#c5a059] mb-4">L'Instant Présent</h1>
-        <p class="text-[10px] uppercase tracking-[0.5em] text-gray-500">Voyage visuel au cœur de notre fournil</p>
     </div>
 
     <main class="gallery-container max-w-7xl mx-auto px-4">
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=1000" alt="Pain de campagne">
-        </div>
-        
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1000" alt="Viennoiserie dorée">
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1000" alt="Farine artisanale de meule">
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1589367920969-ab8e0509aae2?q=80&w=1000" alt="Grains de blé">
-        </div>
-        
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?q=80&w=1000" alt="Croissants bicolores">
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1534620808146-d33bb39128b2?q=80&w=1000" alt="Mains du boulanger">
-        </div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=1000" alt="1"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1000" alt="2"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1000" alt="Farine"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1589367920969-ab8e0509aae2?q=80&w=1000" alt="4"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?q=80&w=1000" alt="5"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1534620808146-d33bb39128b2?q=80&w=1000" alt="6"></div>
     </main>
 
     <div class="text-center py-24">
-        <p class="text-gray-500 text-xs mb-8 uppercase tracking-widest italic font-light">
-            Une envie soudaine de croustillant ?
-        </p>
         <a href="commande.html" class="btn-premium">Réserver ma fournée</a>
     </div>
 
-    <footer class="py-10 border-t border-[#c5a059]/10 text-center">
-        <p class="text-[9px] uppercase tracking-widest text-gray-700">L'Éveil des Sens - Paris 11ème</p>
-    </footer>
+    <script>
+        lucide.createIcons();
+        const burgerBtn = document.getElementById('burger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isOpen = false;
 
+        burgerBtn.addEventListener('click', () => {
+            isOpen = !isOpen;
+            if (isOpen) {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
+                mobileMenu.classList.add('opacity-100', 'translate-x-0');
+                burgerBtn.innerHTML = '<i data-lucide="x"></i>';
+            } else {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-x-full');
+                mobileMenu.classList.remove('opacity-100', 'translate-x-0');
+                burgerBtn.innerHTML = '<i data-lucide="menu"></i>';
+            }
+            lucide.createIcons();
+        });
+    </script>
 </body>
 </html>
+
 
