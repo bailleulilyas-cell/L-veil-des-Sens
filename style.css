@@ -1,0 +1,36 @@
+/* Typographie et Lissage */
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #f5f5f0;
+}
+
+/* Effet Or Mat sur le texte */
+.text-gold {
+    color: #c5a059;
+}
+
+/* Animation douce pour les boutons */
+button, a {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Personnalisation de la barre de défilement (Scrollbar) */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+    background: #c5a059;
+}
+
+/* Effet de verre pour la nav (Glassmorphism) */
+nav {
+    border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+}
