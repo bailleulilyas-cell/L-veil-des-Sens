@@ -5,60 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Carte | L'Éveil des Sens</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-[#1a1a1a] text-[#f5f5f0] font-['Montserrat']">
-    
-    <nav class="p-6 flex justify-between items-center border-b border-[#c5a059]/20">
-        <a href="index.html" class="text-[#c5a059] font-['Cormorant_Garamond'] text-xl italic">L'Éveil des Sens</a>
-        <a href="index.html" class="uppercase text-[10px] tracking-widest hover:text-[#c5a059]">Retour</a>
+<body class="bg-[#1a1a1a]">
+
+    <nav class="fixed w-full z-[100] bg-[#1a1a1a]/95 backdrop-blur-md border-b border-[#c5a059]/20 px-6 py-4 flex justify-between items-center">
+        <div class="text-[#c5a059] font-['Cormorant_Garamond'] text-2xl">L'ÉVEIL DES SENS</div>
+        <button id="burger-btn" class="md:hidden text-[#c5a059] p-2"><i data-lucide="menu"></i></button>
+        
+        <div class="hidden md:flex space-x-8 uppercase text-[10px] tracking-widest">
+            <a href="index.html" class="nav-link">Accueil</a>
+            <a href="menu.html" class="nav-link text-[#c5a059]">La Carte</a>
+            <a href="galerie.html" class="nav-link">Galerie</a>
+            <a href="commande.html" class="btn-premium" style="padding: 0.5rem 1.5rem; min-width: auto;">Commander</a>
+        </div>
+
+        <div id="mobile-menu" class="fixed inset-0 bg-[#1a1a1a] z-[105] flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none translate-x-full">
+            <a href="index.html" class="text-3xl font-serif text-[#c5a059]">Accueil</a>
+            <a href="menu.html" class="text-3xl font-serif text-[#c5a059]">La Carte</a>
+            <a href="galerie.html" class="text-3xl font-serif text-[#c5a059]">Galerie</a>
+            <a href="commande.html" class="btn-premium">Commander</a>
+        </div>
     </nav>
 
-    <section class="py-20 px-6 max-w-5xl mx-auto">
-        <h1 class="font-['Cormorant_Garamond'] text-5xl text-center mb-16 text-[#c5a059]">Nos Créations Signatures</h1>
-
-        <div class="space-y-24">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="w-full md:w-1/2 overflow-hidden border border-[#c5a059]/30">
-                    <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&q=80" alt="La Vibrante" class="w-full h-80 object-cover hover:scale-105 transition duration-700">
-                </div>
-                <div class="w-full md:w-1/2 space-y-4">
-                    <span class="text-[#c5a059] text-xs tracking-widest uppercase">Boulangerie</span>
-                    <h2 class="font-['Cormorant_Garamond'] text-3xl italic">La "Vibrante"</h2>
-                    <p class="text-gray-400 font-light leading-relaxed">Une baguette à longue fermentation aux 5 graines. Une croûte chantante et une mie ambrée aux notes de noisette.</p>
+    <main class="pt-32 pb-20 px-6 max-w-5xl mx-auto">
+        <h1 class="font-serif text-5xl text-center mb-16 text-[#c5a059]">Nos Signatures</h1>
+        
+        <div class="space-y-20">
+            <div class="flex flex-col md:flex-row gap-10 items-center">
+                <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=800" class="w-full md:w-1/2 h-80 object-cover border border-[#c5a059]/20">
+                <div class="space-y-4">
+                    <h2 class="font-serif text-3xl italic">La Vibrante</h2>
+                    <p class="text-gray-400 font-light">Baguette longue fermentation aux 5 graines.</p>
                     <p class="text-[#c5a059] font-bold">1.80€</p>
                 </div>
             </div>
-
-            <div class="flex flex-col md:flex-row-reverse items-center gap-12">
-                <div class="w-full md:w-1/2 overflow-hidden border border-[#c5a059]/30">
-                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80" alt="Le Nuage Sucré" class="w-full h-80 object-cover hover:scale-105 transition duration-700">
-                </div>
-                <div class="w-full md:w-1/2 space-y-4 md:text-right">
-                    <span class="text-[#c5a059] text-xs tracking-widest uppercase">Viennoiserie</span>
-                    <h2 class="font-['Cormorant_Garamond'] text-3xl italic">Le Nuage Sucré</h2>
-                    <p class="text-gray-400 font-light leading-relaxed">Croissant bicolore framboise-pistache. Un feuilletage pur beurre AOP qui fond délicatement sous le palais.</p>
+            <div class="flex flex-col md:flex-row-reverse gap-10 items-center">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=800" class="w-full md:w-1/2 h-80 object-cover border border-[#c5a059]/20">
+                <div class="space-y-4 md:text-right">
+                    <h2 class="font-serif text-3xl italic">Le Nuage Sucré</h2>
+                    <p class="text-gray-400 font-light">Croissant bicolore framboise-pistache.</p>
                     <p class="text-[#c5a059] font-bold">3.50€</p>
                 </div>
             </div>
-
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="w-full md:w-1/2 overflow-hidden border border-[#c5a059]/30">
-                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80" alt="Coin Terroir" class="w-full h-80 object-cover hover:scale-105 transition duration-700">
-                </div>
-                <div class="w-full md:w-1/2 space-y-4">
-                    <span class="text-[#c5a059] text-xs tracking-widest uppercase">Snacking Gourmet</span>
-                    <h2 class="font-['Cormorant_Garamond'] text-3xl italic">Le Coin Terroir</h2>
-                    <p class="text-gray-400 font-light leading-relaxed">Sandwich gastronomique : pain au levain, jambon de pays, beurre de baratte et comté 18 mois.</p>
-                    <p class="text-[#c5a059] font-bold">8.90€</p>
-                </div>
-            </div>
         </div>
+    </main>
 
-        <div class="mt-20 text-center">
-            <a href="commande.html" class="inline-block bg-[#c5a059] text-black px-10 py-4 uppercase text-[10px] tracking-[0.3em] font-bold">Réserver mes produits</a>
-        </div>
-    </section>
+    <script>
+        lucide.createIcons();
+        const burgerBtn = document.getElementById('burger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isOpen = false;
+        burgerBtn.addEventListener('click', () => {
+            isOpen = !isOpen;
+            mobileMenu.className = isOpen ? "fixed inset-0 bg-[#1a1a1a] z-[105] flex flex-col items-center justify-center space-y-8 opacity-100 translate-x-0 transition-all duration-500" : "fixed inset-0 bg-[#1a1a1a] z-[105] flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none translate-x-full transition-all duration-500";
+            burgerBtn.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+            lucide.createIcons();
+        });
+    </script>
 </body>
 </html>
