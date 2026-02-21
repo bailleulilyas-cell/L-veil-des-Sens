@@ -5,36 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L'Éveil des Sens | Boulangerie Créative Paris</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-[#1a1a1a] text-[#f5f5f0] font-['Montserrat']">
 
-    <nav class="fixed w-full z-50 bg-[#1a1a1a]/90 backdrop-blur-md border-b border-[#c5a059]/20 px-6 py-4 flex justify-between items-center">
+    <nav class="fixed w-full z-50 bg-[#1a1a1a]/95 backdrop-blur-md border-b border-[#c5a059]/20 px-6 py-4 flex justify-between items-center">
         <div class="text-[#c5a059] font-['Cormorant_Garamond'] text-2xl font-bold leading-none">
             L'ÉVEIL DES SENS<br><span class="text-xs tracking-[0.3em] uppercase text-white/60">Boulangerie Créative</span>
         </div>
         <div class="hidden md:flex space-x-8 uppercase text-[10px] tracking-widest font-light">
-            <a href="index.html" class="hover:text-[#c5a059] transition">Accueil</a>
-            <a href="menu.html" class="hover:text-[#c5a059] transition">La Carte</a>
-            <a href="galerie.html" class="hover:text-[#c5a059] transition">Galerie</a>
-            <a href="commande.html" class="bg-[#c5a059] text-black px-4 py-2 hover:bg-white transition duration-300">Commander</a>
+            <a href="index.html" class="nav-link">Accueil</a>
+            <a href="menu.html" class="nav-link">La Carte</a>
+            <a href="galerie.html" class="nav-link">Galerie</a>
+            <a href="commande.html" class="btn-premium" style="padding: 0.5rem 1.5rem; min-width: auto;">Commander</a>
         </div>
         <button class="md:hidden text-[#c5a059]"><i data-lucide="menu"></i></button>
     </nav>
 
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-black/50 z-10"></div>
-            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80" class="w-full h-full object-cover scale-105" alt="Pain artisanal">
+            <div class="absolute inset-0 bg-black/60 z-10"></div>
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=2000" class="w-full h-full object-cover" alt="Pain artisanal">
         </div>
-        
         <div class="relative z-20 text-center space-y-6 px-4">
             <h2 class="font-['Cormorant_Garamond'] text-5xl md:text-8xl italic">Où le grain devient poésie</h2>
             <p class="text-[#c5a059] tracking-[0.5em] uppercase text-sm">Artisanat • Levain Naturel • Passion</p>
             <div class="pt-10">
-                <a href="#histoire" class="border border-white/30 px-8 py-4 hover:border-[#c5a059] transition duration-500 uppercase text-xs tracking-widest">Découvrir notre univers</a>
+                <a href="#histoire" class="btn-premium">Découvrir notre univers</a>
             </div>
         </div>
     </header>
@@ -42,40 +41,35 @@
     <section id="histoire" class="py-24 px-6 md:px-20 grid md:grid-cols-2 gap-16 items-center">
         <div class="space-y-8">
             <h3 class="font-['Cormorant_Garamond'] text-4xl text-[#c5a059]">L'Art du Temps</h3>
-            <p class="leading-relaxed font-light text-gray-300">
-                À l'Éveil des Sens, nous croyons que le secret réside dans l'attente. Nos farines de meule, issues de terroirs locaux, rencontrent notre levain naturel pour une fermentation lente de <span class="text-[#c5a059]">48 heures</span>. 
+            <p class="leading-relaxed font-light text-gray-300 italic border-l-2 border-[#c5a059] pl-6">
+                "Nous ne faisons pas que du pain, nous cultivons la patience."
             </p>
             <p class="leading-relaxed font-light text-gray-300">
-                Chaque miche est façonnée à la main, respectant le rythme vivant de la pâte pour vous offrir une digestion parfaite et des arômes d'une profondeur inégalée.
+                Nos farines de meule renforcent notre engagement pour le terroir. Chaque grain est sélectionné pour sa pureté.
             </p>
-            <img src="https://images.unsplash.com/photo-1589367920969-ab8e0509aae2?auto=format&fit=crop&q=80" alt="Farine artisanale" class="w-full h-64 object-cover grayscale hover:grayscale-0 transition duration-700">
+            
+            <div class="gallery-item" style="aspect-ratio: 16/9;">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1000" alt="Farine artisanale" class="w-full h-full object-cover">
+            </div>
+
+            <p class="leading-relaxed font-light text-gray-300">
+                Fermentation lente de 48h au levain naturel pour une mie aérée et une croûte de caractère.
+            </p>
         </div>
         <div class="relative border border-[#c5a059]/30 p-4">
-            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80" alt="Boulanger au travail" class="w-full h-[600px] object-cover">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1000" alt="Boulanger au travail" class="w-full h-[500px] object-cover">
         </div>
     </section>
 
-    <footer class="bg-black py-16 border-t border-[#c5a059]/20">
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center md:text-left">
-            <div>
-                <h4 class="font-['Cormorant_Garamond'] text-[#c5a059] text-2xl mb-4">Horaires</h4>
-                <p class="text-sm font-light text-gray-400">Mar - Sam : 07h00 - 20h00<br>Dimanche : 07h00 - 13h00</p>
+    <footer class="bg-black py-16 border-t border-[#c5a059]/20 text-center">
+        <div class="max-w-4xl mx-auto px-6 space-y-8">
+            <h4 class="font-['Cormorant_Garamond'] text-[#c5a059] text-3xl">L'Éveil des Sens</h4>
+            <p class="text-sm font-light text-gray-400">12 rue des Artisans, 75011 Paris</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://instagram.com/ilyas.ba2l" class="text-white hover:text-[#c5a059] transition"><i data-lucide="instagram"></i></a>
+                <a href="#" class="text-white hover:text-[#c5a059] transition"><i data-lucide="map-pin"></i></a>
             </div>
-            <div>
-                <h4 class="font-['Cormorant_Garamond'] text-[#c5a059] text-2xl mb-4">Le Fournil</h4>
-                <p class="text-sm font-light text-gray-400">12 rue des Artisans, 75011 Paris</p>
-                <div class="flex justify-center md:justify-start space-x-4 mt-4">
-                    <a href="https://instagram.com/ilyas.ba2l" class="text-white hover:text-[#c5a059] transition"><i data-lucide="instagram"></i></a>
-                    <a href="#" class="text-white hover:text-[#c5a059] transition"><i data-lucide="map-pin"></i></a>
-                </div>
-            </div>
-            <div>
-                <h4 class="font-['Cormorant_Garamond'] text-[#c5a059] text-2xl mb-4">Newsletter</h4>
-                <form action="https://formsubmit.co/bailleulilyas@gmail.com" method="POST" class="flex">
-                    <input type="email" placeholder="Votre email" class="bg-transparent border border-gray-700 px-4 py-2 w-full text-xs outline-none focus:border-[#c5a059]">
-                    <button class="bg-[#c5a059] text-black px-4 py-2 text-xs">S'abonner</button>
-                </form>
-            </div>
+            <p class="text-[9px] uppercase tracking-widest text-gray-600">© 2024 L'Éveil des Sens - Boulangerie Créative</p>
         </div>
     </footer>
 
