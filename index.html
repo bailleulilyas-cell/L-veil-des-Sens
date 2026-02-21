@@ -11,17 +11,28 @@
 </head>
 <body class="bg-[#1a1a1a] text-[#f5f5f0] font-['Montserrat']">
 
-    <nav class="fixed w-full z-50 bg-[#1a1a1a]/95 backdrop-blur-md border-b border-[#c5a059]/20 px-6 py-4 flex justify-between items-center">
+    <nav class="fixed w-full z-[100] bg-[#1a1a1a]/95 backdrop-blur-md border-b border-[#c5a059]/20 px-6 py-4 flex justify-between items-center">
         <div class="text-[#c5a059] font-['Cormorant_Garamond'] text-2xl font-bold leading-none">
             L'ÉVEIL DES SENS<br><span class="text-xs tracking-[0.3em] uppercase text-white/60">Boulangerie Créative</span>
         </div>
+
         <div class="hidden md:flex space-x-8 uppercase text-[10px] tracking-widest font-light">
             <a href="index.html" class="nav-link">Accueil</a>
             <a href="menu.html" class="nav-link">La Carte</a>
             <a href="galerie.html" class="nav-link">Galerie</a>
             <a href="commande.html" class="btn-premium" style="padding: 0.5rem 1.5rem; min-width: auto;">Commander</a>
         </div>
-        <button class="md:hidden text-[#c5a059]"><i data-lucide="menu"></i></button>
+
+        <button id="burger-btn" class="md:hidden text-[#c5a059] p-2 z-[110]">
+            <i data-lucide="menu" id="menu-icon"></i>
+        </button>
+
+        <div id="mobile-menu" class="fixed inset-0 bg-[#1a1a1a] z-[105] flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none translate-x-full transition-all duration-500">
+            <a href="index.html" class="text-3xl font-['Cormorant_Garamond'] text-[#c5a059]">Accueil</a>
+            <a href="menu.html" class="text-3xl font-['Cormorant_Garamond'] text-[#c5a059]">La Carte</a>
+            <a href="galerie.html" class="text-3xl font-['Cormorant_Garamond'] text-[#c5a059]">Galerie</a>
+            <a href="commande.html" class="btn-premium">Commander</a>
+        </div>
     </nav>
 
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
@@ -41,38 +52,48 @@
     <section id="histoire" class="py-24 px-6 md:px-20 grid md:grid-cols-2 gap-16 items-center">
         <div class="space-y-8">
             <h3 class="font-['Cormorant_Garamond'] text-4xl text-[#c5a059]">L'Art du Temps</h3>
-            <p class="leading-relaxed font-light text-gray-300 italic border-l-2 border-[#c5a059] pl-6">
-                "Nous ne faisons pas que du pain, nous cultivons la patience."
-            </p>
             <p class="leading-relaxed font-light text-gray-300">
-                Nos farines de meule renforcent notre engagement pour le terroir. Chaque grain est sélectionné pour sa pureté.
+                Nos farines de meule renforcent notre engagement pour le terroir.
             </p>
             
             <div class="gallery-item" style="aspect-ratio: 16/9;">
-                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1000" alt="Farine artisanale" class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1000" alt="Farine artisanale">
             </div>
 
             <p class="leading-relaxed font-light text-gray-300">
-                Fermentation lente de 48h au levain naturel pour une mie aérée et une croûte de caractère.
+                Fermentation lente de 48h au levain naturel.
             </p>
         </div>
         <div class="relative border border-[#c5a059]/30 p-4">
-            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1000" alt="Boulanger au travail" class="w-full h-[500px] object-cover">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1000" alt="Boulanger" class="w-full h-[500px] object-cover">
         </div>
     </section>
 
     <footer class="bg-black py-16 border-t border-[#c5a059]/20 text-center">
-        <div class="max-w-4xl mx-auto px-6 space-y-8">
-            <h4 class="font-['Cormorant_Garamond'] text-[#c5a059] text-3xl">L'Éveil des Sens</h4>
-            <p class="text-sm font-light text-gray-400">12 rue des Artisans, 75011 Paris</p>
-            <div class="flex justify-center space-x-6">
-                <a href="https://instagram.com/ilyas.ba2l" class="text-white hover:text-[#c5a059] transition"><i data-lucide="instagram"></i></a>
-                <a href="#" class="text-white hover:text-[#c5a059] transition"><i data-lucide="map-pin"></i></a>
-            </div>
-            <p class="text-[9px] uppercase tracking-widest text-gray-600">© 2024 L'Éveil des Sens - Boulangerie Créative</p>
-        </div>
+        <p class="text-[#c5a059] font-['Cormorant_Garamond'] text-2xl mb-4">L'Éveil des Sens</p>
+        <p class="text-xs text-gray-500 uppercase tracking-widest">12 rue des Artisans, 75011 Paris</p>
     </footer>
 
-    <script>lucide.createIcons();</script>
+    <script>
+        lucide.createIcons();
+        const burgerBtn = document.getElementById('burger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isOpen = false;
+
+        burgerBtn.addEventListener('click', () => {
+            isOpen = !isOpen;
+            if (isOpen) {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
+                mobileMenu.classList.add('opacity-100', 'translate-x-0');
+                burgerBtn.innerHTML = '<i data-lucide="x"></i>';
+            } else {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-x-full');
+                mobileMenu.classList.remove('opacity-100', 'translate-x-0');
+                burgerBtn.innerHTML = '<i data-lucide="menu"></i>';
+            }
+            lucide.createIcons();
+        });
+    </script>
 </body>
 </html>
+
