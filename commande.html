@@ -5,61 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Commander | L'Éveil des Sens</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-[#1a1a1a] text-[#f5f5f0] font-['Montserrat']">
+<body class="bg-[#1a1a1a]">
 
-    <div class="min-h-screen flex items-center justify-center py-20 px-6">
-        <div class="max-w-2xl w-full bg-[#222] p-8 md:p-12 border border-[#c5a059]/20">
-            <h1 class="font-['Cormorant_Garamond'] text-4xl text-[#c5a059] text-center mb-8">Réservation Click & Collect</h1>
-            
-            <form action="https://formsubmit.co/bailleulilyas@gmail.com" method="POST" class="space-y-6">
-                <input type="hidden" name="_subject" value="Nouvelle Commande - L'Éveil des Sens">
-                <input type="hidden" name="_next" value="https://votre-site.com/merci.html">
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-[10px] uppercase tracking-widest mb-2">Nom Complet</label>
-                        <input type="text" name="nom" required class="w-full bg-transparent border-b border-gray-700 py-2 outline-none focus:border-[#c5a059] transition">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] uppercase tracking-widest mb-2">Téléphone</label>
-                        <input type="tel" name="telephone" required class="w-full bg-transparent border-b border-gray-700 py-2 outline-none focus:border-[#c5a059] transition">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-[10px] uppercase tracking-widest mb-2">Votre Sélection</label>
-                    <textarea name="commande" rows="3" placeholder="Ex: 2 Vibrantes, 3 Nuages Sucrés..." class="w-full bg-transparent border border-gray-700 p-3 outline-none focus:border-[#c5a059] transition"></textarea>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-[10px] uppercase tracking-widest mb-2">Date de retrait</label>
-                        <input type="date" name="date_retrait" required class="w-full bg-transparent border-b border-gray-700 py-2 outline-none focus:border-[#c5a059] transition">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] uppercase tracking-widest mb-2">Heure de retrait</label>
-                        <select name="heure_retrait" class="w-full bg-[#222] border-b border-gray-700 py-2 outline-none focus:border-[#c5a059] transition">
-                            <option>08:00 - 09:00</option>
-                            <option>09:00 - 10:00</option>
-                            <option>10:00 - 11:00</option>
-                            <option>17:00 - 19:00</option>
-                        </select>
-                    </div>
-                </div>
-
-                <button type="submit" class="w-full bg-[#c5a059] text-black font-bold py-4 uppercase text-xs tracking-[0.3em] hover:bg-white transition duration-500">
-                    Confirmer ma commande
-                </button>
-            </form>
-            <div class="mt-8 text-center">
-                <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-500 hover:text-white">← Retour à l'accueil</a>
-            </div>
+    <nav class="fixed w-full z-[100] bg-[#1a1a1a]/95 border-b border-[#c5a059]/20 px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-[#c5a059] font-serif text-xl italic nav-link">L'Éveil des Sens</a>
+        <button id="burger-btn" class="text-[#c5a059] md:hidden p-2"><i data-lucide="menu"></i></button>
+        <div class="hidden md:flex space-x-8 uppercase text-[10px] tracking-widest">
+            <a href="index.html" class="nav-link">Accueil</a>
+            <a href="menu.html" class="nav-link">La Carte</a>
+            <a href="commande.html" class="nav-link text-[#c5a059]">Commander</a>
         </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-[#1a1a1a] z-[105] flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none translate-x-full transition-all">
+        <a href="index.html" class="text-3xl font-serif text-[#c5a059]">Accueil</a>
+        <a href="menu.html" class="text-3xl font-serif text-[#c5a059]">La Carte</a>
+        <a href="commande.html" class="text-3xl font-serif text-[#c5a059]">Commander</a>
     </div>
-    <script>lucide.createIcons();</script>
+
+    <section class="pt-32 pb-20 px-6 max-w-2xl mx-auto">
+        <div class="bg-[#222] p-8 md:p-12 border border-[#c5a059]/10">
+            <h1 class="font-serif text-4xl text-[#c5a059] text-center mb-10">Click & Collect</h1>
+            
+            <form action="https://formsubmit.co/bailleulilyas@gmail.com" method="POST" class="space-y-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <input type="text" name="nom" placeholder="VOTRE NOM" required>
+                    <input type="tel" name="tel" placeholder="TÉLÉPHONE" required>
+                </div>
+                <textarea name="commande" rows="4" placeholder="VOTRE COMMANDE (Ex: 2 Vibrantes, 1 Nuage)"></textarea>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <input type="date" name="date" required>
+                    <select name="heure">
+                        <option>Heure de retrait</option>
+                        <option>08:00 - 10:00</option>
+                        <option>10:00 - 12:00</option>
+                        <option>17:00 - 19:00</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-premium w-full mt-10">Confirmer la réservation</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+        const burgerBtn = document.getElementById('burger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isOpen = false;
+        burgerBtn.addEventListener('click', () => {
+            isOpen = !isOpen;
+            mobileMenu.className = isOpen ? "fixed inset-0 bg-[#1a1a1a] z-[105] flex flex-col items-center justify-center space-y-8 opacity-100 translate-x-0 transition-all duration-500" : "fixed inset-0 bg-[#1a1a1a] z-[105] flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none translate-x-full transition-all duration-500";
+            burgerBtn.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+            lucide.createIcons();
+        });
+    </script>
 </body>
 </html>
