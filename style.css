@@ -9,11 +9,10 @@ body {
     color: #f5f5f0;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* --- BOUTONS & ERGONOMIE (Zones cliquables) --- */
-/* La classe .btn-premium transforme le lien en un grand bloc tactile */
 .btn-premium {
     display: inline-flex;
     align-items: center;
@@ -29,45 +28,45 @@ body {
     transition: all 0.4s ease;
     border: 1px solid #c5a059;
     cursor: pointer;
-    min-width: 250px;
+    min-width: 220px;
+    text-align: center;
 }
 
 .btn-premium:hover {
     background-color: transparent;
     color: #c5a059 !important;
-    transform: translateY(-2px);
 }
 
-/* Navigation cliquable */
 .nav-link {
     display: inline-block;
-    padding: 10px 15px;
+    padding: 15px;
     text-decoration: none;
     color: inherit;
     transition: color 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #c5a059;
+/* --- MENU MOBILE (Animation) --- */
+#mobile-menu {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- GRILLE DE LA GALERIE --- */
+#mobile-menu.opacity-100 {
+    pointer-events: auto !important;
+}
+
+/* --- GRILLE & IMAGES --- */
 .gallery-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    padding: 10px;
 }
 
 @media (min-width: 768px) {
-    .gallery-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur tablette/PC */
-    }
+    .gallery-container { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* --- RÈGLE D'AFFICHAGE DES IMAGES (CORRIGÉE) --- */
 .gallery-item {
-    aspect-ratio: 1 / 1; /* Force le format carré */
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     background-color: #222;
     border: 1px solid rgba(197, 160, 89, 0.1);
@@ -76,10 +75,10 @@ body {
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* L'image remplit tout le carré sans se déformer */
+    object-fit: cover;
     display: block;
     filter: grayscale(100%);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.8s ease, filter 0.5s ease;
 }
 
 .gallery-item img:hover {
@@ -87,27 +86,21 @@ body {
     transform: scale(1.1);
 }
 
-/* --- SECTION HISTOIRE & CONTENU --- */
-.img-histoire {
+/* --- FORMULAIRES --- */
+input, textarea, select {
     width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
-    border: 1px solid rgba(197, 160, 89, 0.2);
+    background: transparent !important;
+    border: none;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+    padding: 1rem 0;
+    color: white;
+    outline: none;
+    font-family: inherit;
 }
 
-/* --- COULEURS ET TYPO --- */
+input:focus { border-bottom-color: #c5a059; }
+
+/* --- UTILITAIRES --- */
 .text-gold { color: #c5a059; }
 .font-serif { font-family: 'Cormorant Garamond', serif; }
-
-/* Barre de défilement personnalisée */
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: #1a1a1a;
-}
-::-webkit-scrollbar-thumb {
-    background: #c5a059;
-}
 
